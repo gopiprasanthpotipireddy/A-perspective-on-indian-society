@@ -35,6 +35,8 @@ hh_data.groupby(['ID13']).size().reset_index(name='total')
 
 hh_social_groups=hh_data.groupby(['ID13','TR4A']).size().reset_index(name='counts')
 
+hh_social_groups=hh_data.groupby(['ID13','TR4A']).size()
+
 sg_un_practice=hh_social_groups.groupby(level=0).apply(lambda x:100 * x / float(x.sum())).reset_index(name='Percentage')
 
 sg_un_practice=sg_un_practice.loc[sg_un_practice.TR4A=='1',:]
@@ -57,3 +59,6 @@ def plot_bar_x():
     
 
 plot_bar_x()
+
+
+
