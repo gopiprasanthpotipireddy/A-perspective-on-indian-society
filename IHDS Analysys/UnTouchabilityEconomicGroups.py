@@ -27,13 +27,15 @@ hh_data=pd.read_csv(hh_path,sep='\t')
 #TR4C HOUSEHOLDS EXPERIENCED[YES/NO]
 
 hh_economic_yes=hh_data.loc[hh_data['TR4A']=='1',['INCOME','TR4A']]
+for i in hh_data.ID13.unique():
+    hh_data.loc[hh_data.ID13 ==i, 'ID13'] = str(i)
 
-#INCOME Division
-hh_data.loc[hh_data['INCOME']>=1700000,'INCCLASS']="Rich"
-hh_data.loc[(hh_data['INCOME']<1700000) & (hh_data['INCOME']>=340000),'INCCLASS']="MiddleClass"
-hh_data.loc[(hh_data['INCOME']<340000) & (hh_data['INCOME']>=150000),'INCCLASS']="Aspirers"
-hh_data.loc[hh_data['INCOME']<150000,'INCCLASS']="Poor"
+hh_data.ID13.unique()
 
+for i in hh_data.TR4C.unique():
+    hh_data.loc[hh_data.TR4C ==i, 'TR4C'] = str(i)
+
+hh_data.TR4C.unique()
 
 
 hh_data.groupby(['INCCLASS']).size().reset_index(name='total')
