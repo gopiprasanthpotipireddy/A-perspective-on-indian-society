@@ -8,7 +8,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
-file_path="C:/Users/gopiprasanthp/Desktop/MyWork/ihds/ICPSR_36151/DS0002"
+file_path=""
 hh_path=os.path.join(file_path,"36151-0002-Data.tsv")
 hh_data=pd.read_csv(hh_path,sep='\t')
 
