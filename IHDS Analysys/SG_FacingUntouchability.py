@@ -17,6 +17,20 @@ hh_data=pd.read_csv(hh_path,sep='\t')
 #TR4A  HOUSEHOLDS PRACTICING[YES/NO]
 #TR4B problem if someone who is scheduled caste were to enter your kitchen or share utensils [YES/NO]
 #TR4C HOUSEHOLDS EXPERIENCED[YES/NO]
+for i in hh_data.ID13.unique():
+    hh_data.loc[hh_data.ID13 ==i, 'ID13'] = str(i)
+
+hh_data.ID13.unique()
+
+for i in hh_data.TR4C.unique():
+    hh_data.loc[hh_data.TR4C ==i, 'TR4C'] = str(i)
+
+hh_data.TR4C.unique()
+
+for i in hh_data.ID11.unique():
+    hh_data.loc[hh_data.ID11 ==i, 'ID11'] = str(i)
+
+hh_data.ID11.unique()
 
 sg_faced_yes=hh_data.loc[hh_data['TR4C']=='1',['ID13','TR4C']]
 
