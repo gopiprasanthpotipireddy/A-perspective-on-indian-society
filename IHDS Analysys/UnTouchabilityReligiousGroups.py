@@ -39,7 +39,7 @@ rg_un_practice=rg_un_practice.loc[rg_un_practice.TR4A=='1',:]
 rg_un_practice['RG']=['Hindu','Muslim','Christian','Sikh','Buddhist','Jain','Tribal','Others']
 
 #plotting social groups practicing untouchability
-ax=sns.barplot(x='RG', y='Percentage', data=rg_un_practice,palette="Blues",errwidth=100)
+ax=sns.barplot(x='RG', y='Percentage', data=rg_un_practice,palette="Blues",errwidth=100).savfig('RG_UNTOUCHABILITY.jpg')
 
 
 

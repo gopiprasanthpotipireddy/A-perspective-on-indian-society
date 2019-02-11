@@ -48,7 +48,7 @@ eg_un_practice=eg_un_practice.loc[eg_un_practice.TR4A=='1',:]
 
 
 #plotting social groups practicing untouchability
-ax=sns.barplot(x='INCCLASS', y='Percentage', data=eg_un_practice,palette="Blues")
+ax=sns.barplot(x='INCCLASS', y='Percentage', data=eg_un_practice,palette="Blues").savefig('EG_UNTOUCHABILITY.jpg')
 
 def plot_bar_x():
     # this is for plotting purpose

@@ -64,5 +64,5 @@ SG_SN_data.groupby(['TR4A']).mean()
 
 ax=sns.factorplot(x='TR4A', y='WITHIN_NETWORK', data=SG_SN_data,kind='box')
 
-sns.factorplot(x='TR4A', y='OUTSIDE_NETWORK', data=SG_SN_data,kind='box')
+sns.factorplot(x='TR4A', y='OUTSIDE_NETWORK', data=SG_SN_data,kind='box').savefig('SN_UNTOUCHABILITY2.jpg')
 

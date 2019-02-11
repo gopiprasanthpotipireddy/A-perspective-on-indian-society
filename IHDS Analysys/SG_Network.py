@@ -53,6 +53,8 @@ for c in ['A','B','C','D','E','F','G','H','I','J','K']:
 for c in ['A','B','C','D','E','F','G','H','I','J','K']:
     SN_OUT.append('SN2'+c+'2')
 
+for c in ['A','B','C','D','E','F','G','H','I','J','K']:
+    SN_IN.append('SN2'+c+'1')
 SG_SN_data['WITHIN_NETWORK']=SG_SN_data[SN_IN].sum(axis=1)
 SG_SN_data['OUTSIDE_NETWORK']=SG_SN_data[SN_OUT].sum(axis=1)
 
@@ -60,5 +62,5 @@ SN_MEANS=pd.DataFrame(SG_SN_data.groupby(['ID13']).mean())
 SN_MEANS['ID13']=[' ','1','2','3','4','5','6']
 
 SN_MEANS=pd.melt(SN_MEANS, id_vars="ID13", var_name="NETWORK", value_name="SIZE")
-ax=sns.factorplot(x='ID13', y='SIZE',hue='NETWORK', data=SN_MEANS,kind='bar')
+ax=sns.factorplot(x='ID13', y='SIZE',hue='NETWORK', data=SN_MEANS,kind='bar').savefig('SG_NETWORK.jpg')
 

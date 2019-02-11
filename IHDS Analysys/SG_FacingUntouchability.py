@@ -49,7 +49,7 @@ untouchability_percentage= (hh_data.loc[hh_data['TR4A']=='1',:].shape[0])/(hh_da
 sg_faced['SocialGroup']=["Not Mentioned","Brahmin","Forward/General (except Brahmin)","Other Backward Castes"," Scheduled Castes"," Scheduled Tribes","Others"]
 sg_faced.columns=['SocialGroup','FacedUntouchability','Percentage']
 #plotting social groups practicing untouchability
-ax=sns.barplot(x='SocialGroup', y='Percentage', data=sg_faced,hue='FacedUntouchability',errwidth=100)
+ax=sns.barplot(x='SocialGroup', y='Percentage', data=sg_faced,hue='FacedUntouchability',errwidth=100).savefig('SG_UNTOUCHABILITY_FACED.jpg')
 
 
 #Religious and SocialGroups Facing Untouchability
@@ -58,4 +58,4 @@ Rs_UnTochability=hh_data.groupby(['ID11','ID13','TR4A']).size()
 Rs_Practice=Rs_UnTochability.groupby(level=0).apply(lambda x:100 * x / float(x.sum())).reset_index(name='Percentage')
 
 Rs_Practice=Rs_Practice.loc[Rs_Practice.TR4A=='1',:]
-ax=sns.barplot(x='ID11', y='Percentage', data=Rs_Practice,hue='ID13')
+ax=sns.barplot(x='ID11', y='Percentage', data=Rs_Practice,hue='ID13').savefig('RELIGION_SOCIAL_UNTOUCHABILITY.jpg')

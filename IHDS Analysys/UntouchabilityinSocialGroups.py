@@ -45,7 +45,7 @@ untouchability_percentage= (hh_data.loc[hh_data['TR4A']=='1',:].shape[0])/(hh_da
 
 sg_un_practice['SocialGroup']=["Not Mentioned","Brahmin","Forward/General (except Brahmin)","Other Backward Castes"," Scheduled Castes"," Scheduled Tribes","Others"]
 #plotting social groups practicing untouchability
-ax=sns.barplot(x='SocialGroup', y='Percentage', data=sg_un_practice,palette="Blues",errwidth=100)
+ax=sns.barplot(x='SocialGroup', y='Percentage', data=sg_un_practice,palette="Blues",errwidth=100).savefig('SG-UNTOUCHABILITY.jpg')
 
 def plot_bar_x():
     # this is for plotting purpose
